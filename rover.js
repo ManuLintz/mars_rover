@@ -120,15 +120,18 @@ for (var j = 0; j< 10; j++)
   for (var k=0; k< 10; k++)
   planetMars[j][k]="X";
 
-// we put an "R" to represent the rover position in the 2 dimension array
+
 if (myRover.columna< 0 || myRover.columna>10 ||myRover.row< 0 || myRover.row>10)
-{document.write("That would put the rover out of the perimeter!");
+{//we make sure that the rover stays within the grid
+  document.write("That would put the rover out of the perimeter!");
 }
+//we create an obstacle with the coordinates [2;2]
 else if(myRover.columna==2 && myRover.row==2 )
 {document.write("You almost hit a rock, try again.");}
 else {
+// we put an "R" to represent the rover position in the 2 dimension array
 planetMars[myRover.columna][myRover.row]="R";
-//We represent a rock with the letter "O"
+//We represent the obstacle with the letter "O"
 planetMars[2][2]="O";
 // we print the grid
 for (var j = 0; j< 10; j++){
